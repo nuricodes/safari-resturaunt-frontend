@@ -3,6 +3,7 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import Hero from './components/Hero';
 import { GlobalStyle } from './globalStyles';
+import Items from './components/Items'
 
 function App() {
   // state = {
@@ -21,6 +22,7 @@ function App() {
     <Router>
       <GlobalStyle />
       <Hero />
+      <Items />
     </Router>
   );
 }

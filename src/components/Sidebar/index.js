@@ -8,10 +8,9 @@ const Sidebar = () => {
                 <CloseIcon />
             </Icon>
             <SidebarMenu>
+                <SidebarLink to="/">Home</SidebarLink>
                 <SidebarLink to="/">About</SidebarLink>
-                <SidebarLink to="/">Entrees</SidebarLink>
-                <SidebarLink to="/">Full Menu</SidebarLink>
-                <SidebarLink to="/">Reviews</SidebarLink>
+                <SidebarLink to="/">Menu</SidebarLink>
             </SidebarMenu>
             <SideBtnWrap>
                 <SidebarRoute to="/">Order Now</SidebarRoute>

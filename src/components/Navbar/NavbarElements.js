@@ -3,7 +3,7 @@ import { NavLink as Link } from 'react-router-dom';
 import { GiCamel } from 'react-icons/gi'
 
 export const Nav = styled.nav`
-    background: transparent;
+    background: tranparent;
     letter-spacing: 5px;
     height: 80px;
     display: flex;

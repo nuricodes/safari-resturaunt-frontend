@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Item from './Item';
-import { Home, Header, Subheader, Grid } from './ItemsElement'
+import Item from './Items';
+import { Title, Wrapper, Menu, Nav2, H2, NavIcon2, Menu2 } from './ItemsElement'
+
 
 
 
@@ -12,36 +13,37 @@ const Items = () => {
         // get items from api
         // update items in our state
 
-        axios.get('/api/v1/items.json')
+        axios.get('https://safari-resturaunt-boston.herokuapp.com/api/v1/items.json')
             .then(res => setItems(res.data.data))
             .catch(res => console.log(res), [items.length])
     })
 
     const grid = items.map(item => {
         return (
-            <>
-                <Item
-                    key={item.attributes.name}
-                    attributes={item.attributes}
-                />
-
-            </>
+            <Item
+                key={item.attributes.name}
+                attributes={item.attributes}
+            />
 
         )
     })
     return (
-        <Fragment>
-            <Home>
-                <Header>
-                    <h1>Check out our Top Rated Dishes</h1>
-                    <p> --irresistably good</p>
-                    <Subheader>Do I want this?</Subheader>
-                </Header>
-                <Grid>
+        <>
+            <Nav2>
+                <H2>SAFARI</H2>
+                <NavIcon2>
+                    <Menu2 />
+                </NavIcon2>
+            </Nav2>
+            <Wrapper>
+                <Title>
+                    <h1><span>Fresh Food, Inspired Roots</span> Our Menu</h1>
+                </Title>
+                <Menu>
                     {grid}
-                </Grid>
-            </Home>
-        </Fragment>
+                </Menu>
+            </Wrapper>
+        </>
     )
 }
 

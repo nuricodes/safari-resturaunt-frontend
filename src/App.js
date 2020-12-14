@@ -1,17 +1,23 @@
 import React from 'react'
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import { GlobalStyle } from './globalStyles';
+import Item from './components/Item/Item'
 import Hero from './components/Hero';
 import Items from './components/Items';
-import { GlobalStyle } from './globalStyles';
 
 
 function App() {
+
   return (
     <Router>
       <GlobalStyle />
-      <Hero />
-      <Items />
+      <Switch>
+        <Route exact path="/" component={Hero} />
+        <Route exact path="/items" component={Items} />
+        <Route path="/items/:slug" component={Item} />
+      </Switch>
     </Router>
   );
 }

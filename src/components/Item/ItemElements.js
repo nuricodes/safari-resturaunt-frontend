@@ -1,12 +1,40 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    color: blue;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+`
+export const Column = styled.div`
+    background: #fff;
+    height: 100vh;
+    overflow: scroll;
+
+    &:last-child {
+        background: #000;
+    }
+`
+export const Main = styled.div`
+    padding-left: 50px
+`
+// Wrapper for the Header
+export const WrapperH = styled.div`
+    padding: 50px 100px 50px 0;
+    font-size: 18px;
+
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 100%;
+        border: 1px solid rgba(0,0,0,0.1);
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 15px
+    }
+   
 `
 
-export const LeftColumn = styled.div`
-color: blue;
-`
 export const Reviews = styled.div`
 color: blue;
 `
@@ -21,20 +49,7 @@ color: blue;
 export const H1 = styled.div`
 color: blue;
 `
-export const Div = styled.div`
+export const Header = styled.div`
 color: blue;
 `
 
-export const TotalReviews = styled.div`
-color: blue;
-`
-export const StarRating = styled.div`
-color: blue;
-`
-
-export const TotalOutOf = styled.div`
-color: blue;
-`
-export const Guest = styled.div`
-
-`

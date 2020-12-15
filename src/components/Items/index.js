@@ -3,9 +3,6 @@ import axios from 'axios'
 import Item from './Items';
 import { Title, Wrapper, Menu, Nav2, H2, NavIcon2, Menu2 } from './ItemsElement'
 
-
-
-
 const Items = () => {
     const [items, setItems] = useState([])
 
@@ -27,6 +24,7 @@ const Items = () => {
 
         )
     })
+    console.log(grid)
     return (
         <>
             <Nav2>

@@ -14,7 +14,7 @@ const Hero = () => {
                 {/* <Sidebar /> */}
                 <HeroContent>
                     <HeroItems>
-                        <HeroH1>Where Home meets Harlem</HeroH1>
+                        <HeroH1>Catchy Title Here</HeroH1>
                         <HeroP>Somali Cuisine</HeroP>
                         <HeroBtn>
                             <Link to={`/items/`}>View Menu</Link>

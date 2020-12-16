@@ -4,7 +4,6 @@ const ReviewForm = (props) => {
     return (
         <div className="WrapperF">
             <form onSubmit={props.handleSubmit}>
-                <div>Did you tried {props.attributes.name}? Share your review!</div>
                 <div className="field">
                     <input onChange={props.handleChange} value={props.review.title} type="text" name="title" placeholder="Enter Your Name" />
                 </div>

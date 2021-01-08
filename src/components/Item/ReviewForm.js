@@ -3,7 +3,11 @@ import React from 'react'
 const ReviewForm = (props) => {
     return (
         <div className="WrapperF">
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                console.log("Hello")
+                props.handleSubmit(e)
+            }}>
                 <div className="field">
                     <input onChange={props.handleChange} value={props.review.title} type="text" name="title" placeholder="Enter Your Name" />
                 </div>
@@ -18,7 +22,7 @@ const ReviewForm = (props) => {
                 </div>
                 <button type="submit">Submit Your Review</button>
             </form>
-        </div>
+        </div >
     )
 }
 

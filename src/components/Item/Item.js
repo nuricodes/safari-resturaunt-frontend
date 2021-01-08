@@ -8,6 +8,10 @@ const Item = (props) => {
     const [item, setItem] = useState({})
     const [review, setReview] = useState({})
     const [loaded, setLoaded] = useState(false)
+    const [form, setForm] = useState({
+        title: "",
+        description: ""
+    })
 
     useEffect(() => {
         const slug = props.match.params.slug;
@@ -28,33 +32,39 @@ const Item = (props) => {
         e.preventDefault();
 
         // console.log('name:', e.target.name, 'value:', e.target.value) //use this to update review in our state
-        setReview(Object.assign({}, review, { [e.target.name]: e.target.value }))
+        setForm({ ...form, [e.target.name]: e.target.value })
         // const l = { ...review, [e.target.name]: e.target.value }
-        console.log('review:', review)
+        console.log('review:', form)
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        setReview(Object.assign({}, review, { [e.target.name]: e.target.value }))
+        // e.preventDefault();
+        // setReview({ [e.target.name]: e.target.value })
         // const l = { ...review, [e.target.name]: e.target.value }
         console.log('review:', review)
+
+        // const item = item.id
+        axios.post('http://localhost:3000/api/v1/reviews', { ...form, item: item.id })
+            .then(resp => {
+                console.log(resp)
+                setForm({
+                    title: "",
+                    description: ""
+                })
+            })
+            .catch(res => {
+                console.log(res)
+            })
+
+        // for (let i = 0; i < review.length; i++) {
+        //     var oneReview = review[i].attributes
+        // }
     }
     //when user submits the handle submit will be triggered and the review and item will be packaged and submited to the api 
     // const csrfToken = document.querySelector('[name=csrf-token]').content
     // axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
 
-    // const item_id = item.id
-    // axios.post('http://localhost:3000/api/v1/reviews', { review, item_id })
-    //     .then(resp => {
-    //         console.log(resp)
-    //     })
-    //     .catch(res => {
-    //         console.log(res)
-    //     })
 
-    // for (let i = 0; i < review.length; i++) {
-    //     var oneReview = review[i].attributes
-    // }
 
     // console.log(oneReview.title)
     return (
@@ -78,7 +88,7 @@ const Item = (props) => {
                             handleChange={handleChange}
                             handleSubmit={handleSubmit}
                             attributes={item.attributes}
-                            review={review}
+                            review={form}
                         />
                     </Column>
                 </Fragment>

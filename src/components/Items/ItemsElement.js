@@ -94,7 +94,8 @@ align-items: center;
 `
 export const ItemImage = styled.div`
 img {
-    max-width: 200px;
+    width: 200px;
+    height: 150px;
     margin right: 30px;
     border-radius: 50 %;
     -moz-border-radius: 50 %;

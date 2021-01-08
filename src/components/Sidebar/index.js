@@ -10,7 +10,7 @@ const Sidebar = () => {
             <SidebarMenu>
                 <SidebarLink to="/">Home</SidebarLink>
                 <SidebarLink to="/">About</SidebarLink>
-                <SidebarLink to="/">Menu</SidebarLink>
+                <SidebarLink to="/items">Menu</SidebarLink>
             </SidebarMenu>
             <SideBtnWrap>
                 <SidebarRoute to="/">Order Now</SidebarRoute>

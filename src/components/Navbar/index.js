@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavLink, NavIcon, Menu, HamMenu } from './NavbarElements'
+import { Nav, NavLink, NavIcon, HamIcon, HamMenu } from './NavbarElements'
 
 
 const Navbar = () => {
@@ -8,9 +8,10 @@ const Navbar = () => {
             <Nav>
                 <NavLink to='/'>SAFARI</NavLink>
                 <NavIcon>
-                    <Menu />
                 </NavIcon>
-                <HamMenu />
+                <HamIcon>
+                    <HamMenu />
+                </HamIcon>
             </Nav>
         </>
     )

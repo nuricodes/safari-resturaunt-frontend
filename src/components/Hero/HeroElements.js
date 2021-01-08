@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ImgBg from '../../images/sabayad.jpg';
+import { NavLink as Link } from 'react-router-dom';
 
 export const HeroContainer = styled.div`
     background: linear-gradient(to left, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url(${ImgBg});
@@ -49,6 +50,7 @@ export const HeroP = styled.p`
 export const HeroBtn = styled.button`
     font-size: 1.4rem;
     padding: 1rem 4rem;
+    margin-left: 1rem;
     border: none;
     background: #e31837;
     color: #fff;
@@ -61,3 +63,10 @@ export const HeroBtn = styled.button`
         color: #000;
     }
 `
+
+export const NavLink = styled(Link)`
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-weight: lighter;
+    `

@@ -27,29 +27,44 @@ export const NavLink = styled(Link)`
     }
 `;
 
-export const NavIcon = styled.div`
+export const NavIcon = styled(GiCamel)`
 display: block;
 position: absolute;
 top: 25px;
 left: 40px;
 cursor: pointer;
 color: #fff;
-
-    p {
-        transform: translated(-175%, 100%);
-        font-weight: bold;
-    }
+font-size: 2.4rem;
     `
 
-export const Menu = styled(GiCamel)`
-    font-size: 2.4rem;
-    transform: translate(-50%, -15%);
-    color: white;
+// export const Menu = styled(GiCamel)`
+//     font-size: 2.4rem;
+//     transform: translate(-50%, -15%);
+//     color: white;
 
-    @media screen and (max-width: 650px) {
-        display: none;
-    }
+//     @media screen and (max-width: 650px) {
+//         display: none;
+//     }
+// `
+export const HamIcon = styled.div`
+display: block;
+position: absolute;
+top: 25px;
+right: 40px;
+cursor: pointer;
+color: #fff;
+
+p {
+    transform: translated(-175%, 100%);
+    font-weight: bold;
+}
 `
 export const HamMenu = styled(GiHamburgerMenu)`
-    text-align: left;
+font-size: 2.4rem;
+transform: translate(-30%, -15%);
+color: white;
+
+@media screen and (max-width: 650px) {
+    display: none;
+}
 `

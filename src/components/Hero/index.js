@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from '../Navbar';
-// import Sidebar from '../Sidebar';
-import { Link } from 'react-router-dom'
-import { HeroContainer, HeroContent, HeroItems, HeroH1, HeroP, HeroBtn } from './HeroElements';
+import Sidebar from '../Sidebar';
+// import { Link } from 'react-router-dom'
+import { HeroContainer, HeroContent, HeroItems, HeroH1, HeroP, HeroBtn, NavLink } from './HeroElements';
 
 
 const Hero = () => {
@@ -11,13 +11,13 @@ const Hero = () => {
         <>
             <HeroContainer>
                 <Navbar />
-                {/* <Sidebar /> */}
+                <Sidebar />
                 <HeroContent>
                     <HeroItems>
-                        <HeroH1>Catchy Title Here</HeroH1>
+                        <HeroH1>Food with Roots</HeroH1>
                         <HeroP>Somali Cuisine</HeroP>
                         <HeroBtn>
-                            <Link to={`/items/`}>View Menu</Link>
+                            <NavLink to={`/items/`}>View Menu</NavLink>
                         </HeroBtn>
                     </HeroItems>
                 </HeroContent>

@@ -13,6 +13,13 @@ export const SidebarContainer = styled.aside`
     top: 0;
     transition: 0.3s ease-in-out;
     right: ${({ isOpen }) => (isOpen ? '0' : '0')}
+    font-size: 1.4rem;
+    padding: 1rem 4rem;
+    margin-left: 1rem;
+    border: none;
+    background: #e31837;
+    color: #fff;
+    transition: 0.2s ease-out;
 
     @media screen and (max-width: 400px) {
         width: 100%;

@@ -17,6 +17,7 @@ export const Column = styled.div`
 `
 export const Main = styled.div`
     padding-left: 50px
+    
 `
 // Wrapper for the Header
 export const WrapperH = styled.div`
@@ -30,7 +31,7 @@ export const WrapperH = styled.div`
         border: 1px solid rgba(0,0,0,0.1);
         display: flex;
         margin: 0 auto;
-        margin-bottom: 15px
+        margin-bottom: 45px
     }
    
 `
@@ -42,9 +43,7 @@ color: blue;
 export const RightColumn = styled.div`
 color: blue;
 `
-export const ReviewForms = styled.div`
-color: blue;
-`
+
 
 export const H1 = styled.div`
 color: blue;

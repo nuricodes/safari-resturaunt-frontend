@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import Header from './Header'
-import ReviewForm from './ReviewForm'
+import ReviewForm from '../Reviews/ReviewForm'
 import { Wrapper, Column, Main, Reviews } from './ItemElements'
 
 const Item = (props) => {
@@ -31,6 +31,7 @@ const Item = (props) => {
     const handleChange = (e) => {
         e.preventDefault();
 
+        //test
         // console.log('name:', e.target.name, 'value:', e.target.value) //use this to update review in our state
         setForm({ ...form, [e.target.name]: e.target.value })
         // const l = { ...review, [e.target.name]: e.target.value }
@@ -56,13 +57,8 @@ const Item = (props) => {
                 console.log(res)
             })
 
-        // for (let i = 0; i < review.length; i++) {
-        //     var oneReview = review[i].attributes
-        // }
+
     }
-    //when user submits the handle submit will be triggered and the review and item will be packaged and submited to the api 
-    // const csrfToken = document.querySelector('[name=csrf-token]').content
-    // axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
 
 
 
@@ -70,7 +66,7 @@ const Item = (props) => {
     return (
         <Wrapper>
             {
-                loaded &&  //essentially this is a check to make sure we made our api request and now we have the data we want to pass down to our header component
+                loaded &&  //this is a check to make sure we made our api request and now we have the data we want to pass down to our header component
                 <Fragment>
                     <Column>
                         <Main>

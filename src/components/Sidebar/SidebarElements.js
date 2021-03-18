@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { FaTimes } from 'react-icons/fa'
 
 export const SidebarContainer = styled.aside`
-    // position: fixed;
-    // z-index: 999;
+    position: fixed;
+    z-index: 999;
     width: 350px;
     height: 100%;
     background: #ffc500;
@@ -12,14 +12,8 @@ export const SidebarContainer = styled.aside`
     align-items: center;
     top: 0;
     transition: 0.3s ease-in-out;
-    right: ${({ isOpen }) => (isOpen ? '0' : '0')}
-    font-size: 1.4rem;
-    padding: 1rem 4rem;
-    margin-left: 1rem;
-    border: none;
-    background: #e31837;
-    color: #fff;
-    transition: 0.2s ease-out;
+    right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')}
+    
 
     @media screen and (max-width: 400px) {
         width: 100%;
@@ -41,7 +35,7 @@ export const Icon = styled.div`
 `
 export const SidebarMenu = styled.div`
     display: grid;
-    grid-template-columns: 3fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 80px);
     text-align: center;
 

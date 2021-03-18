@@ -27,14 +27,19 @@ export const NavLink = styled(Link)`
     }
 `;
 
-export const NavIcon = styled(GiCamel)`
+export const NavIcon = styled.div`
 display: block;
 position: absolute;
-top: 25px;
-left: 40px;
+top: 0;
+left: 0;
 cursor: pointer;
 color: #fff;
-font-size: 2.4rem;
+
+p {
+    transform: translate(-175%, 100%);
+    font-weight: bold;
+}
+
     `
 
 // export const Menu = styled(GiCamel)`
@@ -59,12 +64,9 @@ p {
     font-weight: bold;
 }
 `
-export const HamMenu = styled(GiHamburgerMenu)`
+export const HamMenu = styled(GiCamel)`
 font-size: 2.4rem;
-transform: translate(-30%, -15%);
+transform: translate(-50%, -15%);
 color: white;
 
-@media screen and (max-width: 650px) {
-    display: none;
-}
 `

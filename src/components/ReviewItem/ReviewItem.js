@@ -4,7 +4,7 @@ import Header from './Header'
 import ReviewForm from '../Reviews/ReviewForm'
 import { Wrapper, Column, Main, Reviews } from './ItemElements'
 
-export const ReviewItem = (props) => {
+ const ReviewItem = (props) => {
     const [item, setItem] = useState({})
     const [loaded, setLoaded] = useState(false)
     const [validTitle, setValidTitle] = useState(true);
@@ -72,12 +72,9 @@ export const ReviewItem = (props) => {
                                 attributes={item.attributes}
                                 reviews={item.included}
                             />
-                            <Reviews>
-
-                            </Reviews>
+                            <Reviews/>
                         </Main>
                     </Column>
-
                     <Column>
                         <ReviewForm
                             handleChange={handleChange}
@@ -94,3 +91,4 @@ export const ReviewItem = (props) => {
 
     )
 }
+export default ReviewItem;

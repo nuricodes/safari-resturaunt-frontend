@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 import { GiCamel } from 'react-icons/gi'
-import { GiHamburgerMenu } from 'react-icons/gi'
+// import { GiHamburgerMenu } from 'react-icons/gi'
 
 export const Nav = styled.nav`
     background: tranparent;

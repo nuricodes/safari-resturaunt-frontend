@@ -33,22 +33,22 @@ export const WrapperH = styled.div`
         margin: 0 auto;
         margin-bottom: 45px
     }
-   
+
 `
 
 export const Reviews = styled.div`
 color: blue;
 `
 
-export const RightColumn = styled.div`
-color: blue;
-`
+// export const RightColumn = styled.div`
+// color: green;
+// `
 
 
-export const H1 = styled.div`
-color: blue;
-`
-export const Header = styled.div`
-color: blue;
-`
+// export const H1 = styled.div`
+// color: blue;
+// `
+// export const Header = styled.div`
+// color: blue;
+// `
 

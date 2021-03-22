@@ -4,10 +4,11 @@ import Header from './Header'
 import ReviewForm from '../Reviews/ReviewForm'
 import { Wrapper, Column, Main, Reviews } from './ItemElements'
 
-const Item = (props) => {
+const ReviewItem = (props) => {
     const [item, setItem] = useState({})
-    const [review, setReview] = useState({})
     const [loaded, setLoaded] = useState(false)
+    const [validTitle, setValidTitle] = useState(true);
+    const [validDescription, setValidDescription] = useState(true);
     const [form, setForm] = useState({
         title: "",
         description: ""
@@ -15,53 +16,53 @@ const Item = (props) => {
 
     useEffect(() => {
         const slug = props.match.params.slug;
-
-        //api request
         axios.get(`https://safari-resturaunt-boston.herokuapp.com/api/v1/items/${slug}`)
             .then(res => {
                 setItem(res.data.data)
-                setReview(res.data.included)
-                // setLoaded(true) //once true we can load in the header component
                 setLoaded(true)
-
             })
             .catch(res => console.log(res))
-    }, [])
+    }, [props.match.params.slug])
 
     const handleChange = (e) => {
         e.preventDefault();
-
-        //test
-        // console.log('name:', e.target.name, 'value:', e.target.value) //use this to update review in our state
         setForm({ ...form, [e.target.name]: e.target.value })
-        // const l = { ...review, [e.target.name]: e.target.value }
-        console.log('review:', form)
+    }
+
+    const validateFields = () => {
+        setValidTitle(form.title.length <= 0 ? false : true);
+        setValidDescription(form.description.length <= 0 ? false : true);
+    }
+
+    const resetForm = () => {
+        setForm({
+            title: "",
+            description: ""
+        })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // console.log('review:', review)
+        validateFields();
 
-        // const item = item.id
+        if (!validDescription || !validTitle) {
+            console.log({ validDescription })
+            return;
+        }
+
+
         axios.post('http://localhost:3000/api/v1/reviews', { ...form, item: item.id })
             .then(resp => {
                 console.log(resp)
-                setForm({
-                    title: "",
-                    description: ""
-                })
+                resetForm();
             })
-            .catch(res => {
-                console.log(res)
+            .catch(error => {
+                // no-op
+                console.log(error);
             })
-
-
     }
 
-
-
-    // console.log(oneReview.title)
     return (
         <Wrapper>
             {
@@ -73,18 +74,17 @@ const Item = (props) => {
                                 attributes={item.attributes}
                                 reviews={item.included}
                             />
-                            <Reviews>
-
-                            </Reviews>
+                            <Reviews />
                         </Main>
                     </Column>
-
                     <Column>
                         <ReviewForm
                             handleChange={handleChange}
                             handleSubmit={handleSubmit}
                             attributes={item.attributes}
                             review={form}
+                            validTitle={validTitle}
+                            validDescription={validDescription}
                         />
                     </Column>
                 </Fragment>
@@ -93,6 +93,4 @@ const Item = (props) => {
 
     )
 }
-
-export default Item
-
+export default ReviewItem;

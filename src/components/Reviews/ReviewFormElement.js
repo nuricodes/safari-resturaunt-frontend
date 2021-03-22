@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const H1 = styled.div`
 margin-top: 15%;
+margin-bottom: 15%;
 padding: 20px 0 0 0;
 font-size: 60px;
 height: 50px;

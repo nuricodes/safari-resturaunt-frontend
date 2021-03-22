@@ -39,10 +39,9 @@ const Item = (props) => {
     }
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // setReview({ [e.target.name]: e.target.value })
-        // const l = { ...review, [e.target.name]: e.target.value }
-        console.log('review:', review)
+        e.preventDefault();
+
+        // console.log('review:', review)
 
         // const item = item.id
         axios.post('http://localhost:3000/api/v1/reviews', { ...form, item: item.id })
